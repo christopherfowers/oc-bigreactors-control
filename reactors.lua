@@ -35,7 +35,7 @@ function handleReactor(reactor)
 end
 
 function isSafeToRun(reactor)
-    if reacttor.getCasingTemperature() < criticalCaseTemp and reactor.getFuelTemperature() < criticalCoreTemp then
+    if reactor.getCasingTemperature() < criticalCaseTemp and reactor.getFuelTemperature() < criticalCoreTemp then
         return true
     end
     return false
