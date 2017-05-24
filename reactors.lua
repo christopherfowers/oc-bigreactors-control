@@ -34,6 +34,10 @@ function handleReactor(reactor)
     end
 end
 
+function isPowerLow(reactor)
+    return reactor.getEnergyCapacity() > reactor.getEnergyStored()
+end 
+
 function isSafeToRun(reactor)
     if reactor.getCasingTemperature() < criticalCaseTemp and reactor.getFuelTemperature() < criticalCoreTemp then
         return true
