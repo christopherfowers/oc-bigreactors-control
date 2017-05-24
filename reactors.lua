@@ -83,17 +83,17 @@ function printStats(reactor, num)
     term.write("Reactor " .. num .. "\n", false)
     term.clearLine()
 
-    term.write("Reactor state:      " .. offset(state, offs) .. "\n", false)
+    term.write("Reactor state:      " .. state .. "\n", false)
     term.clearLine()
-    term.write("Currently stored:   " .. offset(fancyNumber(stored), offs) .. " RF\n", false)
+    term.write("Currently stored:   " .. stored .. " RF\n", false)
     term.clearLine()
-    term.write("Stored percentage:  " .. offset(stored / maxEnergy * 100, offs) .. " %\n", false)
+    term.write("Stored percentage:  " .. stored / maxEnergy * 100 .. " %\n", false)
     term.clearLine()
-    term.write("Current Production: " .. offset(fancyNumber(reactor.getEnergyProducedLastTick()), offs) .. " RF/t", false)
+    term.write("Current Production: " .. reactor.getEnergyProducedLastTick() .. " RF/t"
     term.clearLine()
-    term.write("Case Temp: " .. offset((reactor.getCasingTemperature()), offs) .. "\n", false)
+    term.write("Case Temp: " ..reactor.getCasingTemperature() .. "\n"
     term.clearLine()
-    term.write("Fuel Temp: " .. offset((reactor.getFuelTemperature()), offs) .. "\n", false)
+    term.write("Fuel Temp: " .. reactor.getFuelTemperature() .. "\n"
 end
 
 function setRodDepth(reactor, depth) 
