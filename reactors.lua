@@ -80,14 +80,16 @@ function printStats(reactor, num)
         state = "Off"
     end
     
-    term.write("Reactor " .. num .. "\n", false)
+    term.write("Reactor " .. num .. "\n")
+    term.clearLine()
+    term.write("SafeToRun " .. isSafeToRun(reactor) .. "\n")
     term.clearLine()
 
-    term.write("Reactor state:      " .. state .. "\n", false)
+    term.write("Reactor state:      " .. state .. "\n")
     term.clearLine()
-    term.write("Currently stored:   " .. stored .. " RF\n", false)
+    term.write("Currently stored:   " .. stored .. " RF\n")
     term.clearLine()
-    term.write("Stored percentage:  " .. stored / maxEnergy * 100 .. " %\n", false)
+    term.write("Stored percentage:  " .. stored / maxEnergy * 100 .. " %\n")
     term.clearLine()
     term.write("Current Production: " .. reactor.getEnergyProducedLastTick() .. " RF/t")
     term.clearLine()
@@ -106,9 +108,11 @@ function handleControl()
     end
     
     local reactorNum = 0
+    term.clear()
     for address, componentType in component.list("br_reactor") do
         reactorNum = reactorNum + 1
         handleReactor(component.proxy(address))
+        term.write("\n\n")
         term.clearLine()
         printStats(component.proxy(address), reactorNum)
     end
