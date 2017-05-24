@@ -59,12 +59,12 @@ function isStorageLow(reactor)
 end
 
 function stopReactor(reactor)
-    reactor.setAllControlRodLevels(reactor, 100)
+    reactor.setAllControlRodLevels(100)
     reactor.setActive(false)
 end
 
 function startReactor(reactor)
-    reactor.setAllControlRodLevels(reactor, 60)
+    reactor.setAllControlRodLevels(60)
     reactor.setActive(true)
 end
 
