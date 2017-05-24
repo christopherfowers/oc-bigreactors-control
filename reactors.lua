@@ -24,9 +24,9 @@ function handleReactor(reactor)
         if ticks >= 5 then
             ticks = 0
             if reactor.getFuelTemperature() <= targetCoreTemp and reactor.getCasingTemperature() <= targetCaseTemp then
-                setRodDepth(reactor.getControlRodLevel(0) - 1)
+                setRodDepth(reactor, reactor.getControlRodLevel(0) - 1)
             elseif reactor.getFuelTemperature() >= targetCoreTemp and reactor.getCasingTemperature() >= targetCaseTemp then
-                setRodDepth(reactor.getControlRodLevel(0) + 1)
+                setRodDepth(reactor, reactor.getControlRodLevel(0) + 1)
             end
         end
     elseif isSafeToRun(reactor) and isPowerLow(reactor) then
@@ -59,12 +59,12 @@ function isStorageLow(reactor)
 end
 
 function stopReactor(reactor)
-    reactor.setAllControlRodLevels(100)
+    reactor.setAllControlRodLevels(reactor, 100)
     reactor.setActive(false)
 end
 
 function startReactor(reactor)
-    reactor.setAllControlRodLevels(60)
+    reactor.setAllControlRodLevels(reactor, 60)
     reactor.setActive(true)
 end
 
