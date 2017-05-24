@@ -89,11 +89,11 @@ function printStats(reactor, num)
     term.clearLine()
     term.write("Stored percentage:  " .. stored / maxEnergy * 100 .. " %\n", false)
     term.clearLine()
-    term.write("Current Production: " .. reactor.getEnergyProducedLastTick() .. " RF/t"
+    term.write("Current Production: " .. reactor.getEnergyProducedLastTick() .. " RF/t")
     term.clearLine()
-    term.write("Case Temp: " ..reactor.getCasingTemperature() .. "\n"
+    term.write("Case Temp: " ..reactor.getCasingTemperature() .. "\n")
     term.clearLine()
-    term.write("Fuel Temp: " .. reactor.getFuelTemperature() .. "\n"
+    term.write("Fuel Temp: " .. reactor.getFuelTemperature() .. "\n")
 end
 
 function setRodDepth(reactor, depth) 
