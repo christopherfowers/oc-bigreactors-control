@@ -109,6 +109,7 @@ function handleControl()
     for address, componentType in component.list("br_reactor") do
         reactorNum = reactorNum + 1
         handleReactor(component.proxy(address))
+        term.clearLine()
         printStats(component.proxy(address), reactorNum)
     end
 end
@@ -130,7 +131,7 @@ function run()
         if keyboard.isKeyDown(keyboard.keys.w) and keyboard.isControlDown() then
             endProgram();
         end
-        tick = tick + 1
+        ticks = ticks + 1
         os.sleep(1)
     end
 end
