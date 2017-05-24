@@ -65,7 +65,7 @@ end
 
 function startReactor(reactor)
     reactor.setAllControlRodLevels(60)
-    reactor.setActive(false)
+    reactor.setActive(true)
 end
 
 function printStats(reactor, num)
